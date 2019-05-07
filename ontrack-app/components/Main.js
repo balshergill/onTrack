@@ -15,7 +15,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'rgba(255, 0, 0, 0.3)',
     justifyContent: 'center',
-    alignSelf: 'stretch'
+    textAlign: 'center',
+    width: '100%',
+    alignItems: 'center',
   },
 });
 
