@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Header from './components/Header.js';
-import Main from './components/Main.js';
-import Menu from './components/Menu.js';
+import Body from './components/Body.js';
+import searchScreen from './components/searchScreen';
+import userScreen from './components/userScreen';
 import { StyleSheet, View } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 
 export default class App extends Component {
@@ -10,12 +12,21 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Header />
-        <Main />
-        <Menu />
+        <Body />
       </View>
     );
   }
 }
+
+const AppNavigator = createStackNavigator(
+  {
+    Home: searchScreen,
+    User: userScreen,
+  },
+  {
+    initialRouteName: "Home"
+  }
+ );
 
 const styles = StyleSheet.create({
   container: {
@@ -26,3 +37,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+const AppContainer = createAppContainer(AppNavigator);
