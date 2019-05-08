@@ -6,4 +6,4 @@ const { getJourney } = require('../controllers/journeyController');
 journeyRouter.route('/').get(getJourney);
 // .all()
 
-module.exports = { journeyRouter };
+module.exports = journeyRouter;

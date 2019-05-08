@@ -4,7 +4,7 @@
   "description": "",
   "main": "App.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./spec/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/Stoker15/onTrack/issues"
   },
-  "homepage": "https://github.com/Stoker15/onTrack#readme"
+  "homepage": "https://github.com/Stoker15/onTrack#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "national-rail-darwin": "^1.0.8"
+  }
 }
