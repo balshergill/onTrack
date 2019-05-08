@@ -5,34 +5,37 @@ import { Icon } from 'react-native-elements'
 const Menu = () => {
   return (
     <View style={styles.Menu}>
-      <Icon
-        name='search'
-        type='font-awesome'
-        color='#9A9A9A'
-        size='40'
-        style={styles.search}
-      />
-      <Icon
-        name='list-ul'
-        type='font-awesome'
-        color='#9A9A9A'
-        size='40'
-        style={styles.list}
-      />
-      <Icon
-        name='user'
-        type='font-awesome'
-        color='#9A9A9A'
-        size='40'
-        style={styles.user}
-      />
+      <View style={styles.icon}>
+        <Icon
+          name='search'
+          type='feather'
+          color='#9A9A9A'
+          size='50'
+        />
+      </View>
+      <View style={styles.icon}>
+        <Icon
+          name='list'
+          type='feather'
+          color='#9A9A9A'
+          size='60'
+        />
+      </View>
+      <View style={styles.icon}>
+        <Icon
+          name='user'
+          type='feather'
+          color='#9A9A9A'
+          size='50'
+        />
+      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   Menu: {
-    flex: 0.75,
+    flex: 0.9,
     flexDirection: 'row',
     backgroundColor: 'rgba(0, 255, 0, 0.3)',
     backgroundColor: '#FFF',
@@ -41,19 +44,12 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
   },
-  search: {
+  icon: {
     flexDirection: 'row',
     flex: 1,
-    marginLeft: '5%',
+    marginLeft: '9%',
+    marginTop: '1.5%',
   },
-  list: {
-    flexDirection: 'row',
-    flex: 1,
-  },
-  user: {
-    flexDirection: 'row',
-    flex: 1,
-  }
 });
 
 export default Menu;
