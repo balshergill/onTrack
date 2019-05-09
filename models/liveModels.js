@@ -7,3 +7,19 @@ exports.fetchLiveJourney = (params, query, callback) => {
     callback(null, result);
   });
 };
+
+// exports.fetchLiveFastest = (params, query, callback) => {
+//   console.log('in model', query.from, query.to);
+//   console.log(callback);
+//   rail.getDepartureBoard(query.from, query.to, {}, (err, result) => {
+//     if (err) throw err;
+//     callback(null, result);
+//   });
+// };
+
+exports.fetchLiveNext = (params, query, callback) => {
+  rail.getNextDeparture(query.from, query.to, {}, (err, result) => {
+    if (err) throw err;
+    callback(null, result);
+  });
+};
