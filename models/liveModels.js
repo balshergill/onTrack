@@ -1,8 +1,6 @@
 const { rail } = require('../keys');
 const stations = require('../station_codes.json');
 
-// console.log(stations[0]['CRS Code'] === 'LDS');
-
 const stationInfo = (startCrs, endCrs) => {
   let result = {
     start: null,
@@ -22,14 +20,16 @@ const stationInfo = (startCrs, endCrs) => {
   return result;
 };
 
-console.log(stationInfo('LDS', 'YRK'));
-
 exports.fetchLiveJourney = (params, query, callback) => {
   const destination = query.to;
-  rail.getDepartureBoard(query.from, { destination }, (err, result) => {
-    if (err) throw err;
-    callback(null, result);
-  });
+  rail.getDepartureBoardWithDetails(
+    query.from,
+    { destination },
+    (err, result) => {
+      if (err) throw err;
+      callback(null, result);
+    }
+  );
 };
 
 // exports.fetchLiveFastest = (params, query, callback) => {
