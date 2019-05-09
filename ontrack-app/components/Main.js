@@ -1,13 +1,13 @@
 import React from 'react'
 import Search from './Search.js';
-import List from './List.js'
+import ServiceList from './ServiceList.js'
 import User from './User.js'
 import { View, StyleSheet } from 'react-native';
 
 const Main = props => {
   return (
     <View style={styles.Main}>
-      {props.currentScreen === 'List' ? <List /> : props.currentScreen === 'User' ? <User /> : <Search />}
+      {props.currentScreen === 'List' ? <ServiceList /> : props.currentScreen === 'User' ? <User /> : <Search />}
     </View>
   )
 }
