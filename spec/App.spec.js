@@ -10,7 +10,7 @@ describe('/journey', () => {
       .get('/journey?from=MCV&to=HFX')
       .expect(200)
       .then(({ body }) => {
-        console.log(body.trainServices[0]);
+        // console.log(body.trainServices[0]);
       });
   });
 });
