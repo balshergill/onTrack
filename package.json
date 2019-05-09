@@ -4,7 +4,9 @@
   "description": "",
   "main": "App.js",
   "scripts": {
-    "test": "mocha ./spec/*.spec.js"
+    "test": "mocha ./spec/*.spec.js",
+    "setup-db": "psql -f ./db/setup.sql && NODE_ENV=test knex seed:run",
+    "seed-db": "knex seed:run"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "national-rail-darwin": "^1.0.8"
+    "knex": "^0.16.5",
+    "national-rail-darwin": "^1.0.8",
+    "pg": "^7.10.0"
   }
 }
