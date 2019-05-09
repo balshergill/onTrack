@@ -62,7 +62,6 @@ exports.compileData = () => {
         });
       }
       newData = JSON.stringify(data);
-      // callback(null, newData);
       console.log('compiled');
       resolve(data);
     });
