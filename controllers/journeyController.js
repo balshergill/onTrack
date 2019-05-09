@@ -1,9 +1,8 @@
 const { fetchLiveJourney } = require('../models/liveModels');
 
 exports.getJourney = (req, res, next) => {
-  fetchLiveJourney(req.params, req.query, (err, trains) => {
-    if (err) console.log(err);
-    // console.log(trains);
-    res.status(200).json(trains);
+  fetchLiveJourney(req.params, req.query, (err, data) => {
+    if (err) throw err;
+    res.status(200).json(data);
   });
 };
