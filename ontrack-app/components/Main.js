@@ -1,10 +1,13 @@
 import React from 'react'
-import { Text, View, StyleSheet } from 'react-native';
+import Search from './Search.js';
+import List from './List.js'
+import User from './User.js'
+import { View, StyleSheet } from 'react-native';
 
-const Main = () => {
+const Main = props => {
   return (
     <View style={styles.Main}>
-      <Text>Main</Text>
+      {props.currentScreen === 'List' ? <List /> : props.currentScreen === 'User' ? <User /> : <Search />}
     </View>
   )
 }
@@ -13,7 +16,6 @@ const styles = StyleSheet.create({
   Main: {
     flex: 6,
     flexDirection: 'column',
-    backgroundColor: 'rgba(255, 0, 0, 0.3)',
     justifyContent: 'center',
     textAlign: 'center',
     width: '100%',
