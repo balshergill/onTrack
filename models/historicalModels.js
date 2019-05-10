@@ -4,7 +4,7 @@ exports.displayMinsLate = (stationFrom, stationTo, scheduledDep) => {
   return knex
     .select(
       knex.raw(
-        "ROUND(AVG(COALESCE(dep_minutes_late, 0)),2) AS dep_minutes_late"
+        "ROUND(AVG(COALESCE(dep_minutes_late, 0)),2) + ROUND(AVG(COALESCE(cancelled, 0)),2) AS dep_minutes_late"
       )
     )
     .from("historical_services")
