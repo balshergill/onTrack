@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
       flex: 6,
       flexDirection: 'column',
       backgroundColor: 'white',
-      justifyContent: 'center',
       textAlign: 'center',
       alignSelf: 'stretch',
       alignItems: 'center',
@@ -54,7 +53,6 @@ const styles = StyleSheet.create({
     Usernameinput: {
       flex: 1,
       backgroundColor: '#EFEFEF',
-      justifyContent: 'center',
       width: 300,
       marginTop: 40,
       borderBottomColor: '#0996F6',
@@ -64,7 +62,6 @@ const styles = StyleSheet.create({
     Passwordinput: {
       flex: 1,
       backgroundColor: '#EFEFEF',
-      justifyContent: 'center',
       width: 300,
       marginTop: 20,
       borderBottomColor: '#0996F6',
@@ -88,7 +85,6 @@ const styles = StyleSheet.create({
     login: {
       fontSize: 30,
       textAlign: 'center',
-      justfiyContent: 'center',
       paddingTop: 10,
       fontWeight: 'bold',
       color: 'white',
