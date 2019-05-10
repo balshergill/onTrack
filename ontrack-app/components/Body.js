@@ -18,7 +18,7 @@ export default class Body extends Component {
               name='search'
               type='feather'
               color={this.state.currentScreen === 'Search' ? '#0996F6' : '#9A9A9A'} 
-              size='40'
+              size= {40}
               class='Search'
               onPress={() => this.handleClick('Search')}
             />
@@ -36,7 +36,7 @@ export default class Body extends Component {
               name='user'
               type='feather'
               color={this.state.currentScreen === 'User' ? '#0996F6' : '#9A9A9A'} 
-              size='40'
+              size={40}
               onPress={() => this.handleClick('User')}
             />
           </View>
