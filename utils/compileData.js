@@ -15,7 +15,8 @@ exports.compileData = () => {
           const dataToEdit = JSON.parse(contents);
           let wantedData;
           for (let i = 0; i < dataToEdit.locations.length; i++) {
-            if (i < dataToEdit.locations.length - 2) {
+            console.log(dataToEdit.locations.length);
+            if (i < dataToEdit.locations.length - 1) {
               wantedData = {
                 service_id: dataToEdit.serviceUid,
                 run_date: dataToEdit.runDate,
@@ -58,8 +59,8 @@ exports.compileData = () => {
                 cancelled_reason: dataToEdit.locations[i].cancelReasonLongText
               };
             }
+            data.push(wantedData);
           }
-          data.push(wantedData);
         });
       }
       newData = JSON.stringify(data);

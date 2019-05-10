@@ -23,7 +23,7 @@ exports.getJourney = function(req, res, next) {
     const stationTo = "Bramley (West Yorkshire)";
     const depTime = "08:09:00";
     displayMinsLate(stationFrom, stationTo, depTime).then(historicData => {
-      console.log(historicData[0].arr_minutes_late, "historicData");
+      console.log(historicData[0].dep_minutes_late, "historicData");
       res.status(200).json({
         liveData: liveData,
         historicData: historicData[0].arr_minutes_late
