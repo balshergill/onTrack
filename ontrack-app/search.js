@@ -16,4 +16,39 @@ const exactSearch = input => {
   return result;
 };
 
-console.log(exactSearch('hjhgk'));
+const laxSearch = input => {
+  let result = stations.filter(station => {
+    return (
+      station['CRS Code'].includes(input.toUpperCase()) ||
+      station['Station Name'].toUpperCase().includes(
+        input
+          .split("'")
+          .join('')
+          .toUpperCase()
+      )
+    );
+  });
+
+  if (!result.length) {
+    result.push({ 'Station Name': 'error', 'CRS Code': 'error' });
+  }
+
+  if (result.length - 1) {
+    for (let i = 0; i < result.length; i++) {
+      if (
+        result[i]['CRS Code'] === input.toUpperCase() ||
+        result[i]['Station Name'].toUpperCase() ===
+          input
+            .split("'")
+            .join('')
+            .toUpperCase()
+      ) {
+        let match = result[i];
+        result.splice(i, 1);
+        result.unshift(match);
+      }
+    }
+  }
+
+  return result;
+};
