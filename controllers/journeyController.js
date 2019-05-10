@@ -7,6 +7,7 @@ const {
 const { displayMinsLate } = require("../models/historicalModels");
 
 exports.getJourney = function(req, res, next) {
+  console.log(req.params, req.query, "in controller");
   fetchLiveJourney(req.params, req.query).then(liveData => {
     let index = liveData.trainServices[0].subsequentCallingPoints.findIndex(
       stop => {
