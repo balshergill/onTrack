@@ -1,21 +1,20 @@
-const fs = require("fs");
-const path = require("path");
-const directoryPath = path.join(__dirname, "../") + "db/data/raw-data";
+const fs = require('fs');
+const path = require('path');
+const directoryPath = path.join(__dirname, '../') + 'db/data/raw-data';
 console.log(directoryPath);
 
 exports.compileData = () => {
+  console.log('compileData');
   return new Promise(function(resolve, reject) {
     fs.readdir(directoryPath, function(err, files) {
       const data = [];
       if (err) return console.log(err);
       else {
-        console.log(files.length);
         files.forEach(function(file) {
-          let contents = fs.readFileSync(`${directoryPath}/${file}`, "utf8");
+          let contents = fs.readFileSync(`${directoryPath}/${file}`, 'utf8');
           const dataToEdit = JSON.parse(contents);
           let wantedData;
           for (let i = 0; i < dataToEdit.locations.length; i++) {
-            console.log(dataToEdit.locations.length);
             if (i < dataToEdit.locations.length - 1) {
               wantedData = {
                 service_id: dataToEdit.serviceUid,

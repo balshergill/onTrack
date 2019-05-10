@@ -5,7 +5,9 @@
   "main": "App.js",
   "scripts": {
     "test": "mocha ./spec/*.spec.js",
-    "setup-db": "psql -f ./db/setup.sql && NODE_ENV=test knex seed:run"
+    "setup-db": "psql -f ./db/setup.sql && NODE_ENV=test knex seed:run",
+    "create-db": "psql -f ./db/setup.sql",
+    "seed-service": "NODE_ENV=test knex seed:run"
   },
   "repository": {
     "type": "git",
