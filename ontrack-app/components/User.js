@@ -18,7 +18,6 @@ class User extends React.Component {
         <View style={styles.Passwordinput}>
           <TextInput style={styles.inputField} onChangeText={(text) => this.setState({PasswordText: text})} secureTextEntry={true} value={this.state.PasswordText} />
         </View>
-        <View style={styles.spacer2}/>
         <View style={styles.ButtonArea}>
           <TouchableOpacity style={styles.Button}>
             <Text style={styles.login}>Login</Text>
@@ -49,6 +48,10 @@ const styles = StyleSheet.create({
       width: 300,
       borderBottomColor: '#0996F6',
       borderBottomWidth: 2,
+      shadowColor: '#000',
+      shadowOffset: { width: 4, height: 5 },
+      shadowOpacity: 0.2,
+      shadowRadius: 2,
     },
     Usernameinput: {
       flex: 1,
@@ -57,7 +60,11 @@ const styles = StyleSheet.create({
       marginTop: 40,
       borderBottomColor: '#0996F6',
       borderBottomWidth: 2,
-      color: '#040404'
+      color: '#040404',
+      shadowColor: '#000',
+      shadowOffset: { width: 4, height: 5 },
+      shadowOpacity: 0.2,
+      shadowRadius: 2,
     },
     Passwordinput: {
       flex: 1,
@@ -67,8 +74,11 @@ const styles = StyleSheet.create({
       borderBottomColor: '#0996F6',
       borderBottomWidth: 2,
       marginBottom: 40,
-      color: '#040404'
-
+      color: '#040404',
+      shadowColor: '#000',
+      shadowOffset: { width: 4, height: 5 },
+      shadowOpacity: 0.2,
+      shadowRadius: 2,
     },
     spacer: {
       flex: 7,
@@ -78,7 +88,7 @@ const styles = StyleSheet.create({
       fontSize: 30,
       color: '#404040',
       position: 'absolute',
-      top: 0,
+      bottom: 0,
       paddingLeft: 10,
       marginTop: 20,
     },
