@@ -3,6 +3,7 @@ CREATE DATABASE historical_trains;
 
 \c historical_trains;
 
+DROP TABLE IF EXISTS historical_services;
 CREATE TABLE historical_services (
   id SERIAL primary key NOT NULL, 
   service_id VARCHAR(10), 

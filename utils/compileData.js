@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const directoryPath = path.join(__dirname, '../') + 'db/data/raw-data';
-// console.log(directoryPath);
+const fs = require("fs");
+const path = require("path");
+const directoryPath = path.join(__dirname, "../") + "db/data/raw-data";
+console.log(directoryPath);
 
 exports.compileData = () => {
   return new Promise(function(resolve, reject) {
@@ -9,12 +9,14 @@ exports.compileData = () => {
       const data = [];
       if (err) return console.log(err);
       else {
+        console.log(files.length);
         files.forEach(function(file) {
-          let contents = fs.readFileSync(`${directoryPath}/${file}`, 'utf8');
+          let contents = fs.readFileSync(`${directoryPath}/${file}`, "utf8");
           const dataToEdit = JSON.parse(contents);
+          let wantedData;
           for (let i = 0; i < dataToEdit.locations.length; i++) {
-            let wantedData;
-            if (i < dataToEdit.locations.length - 2) {
+            console.log(dataToEdit.locations.length);
+            if (i < dataToEdit.locations.length - 1) {
               wantedData = {
                 service_id: dataToEdit.serviceUid,
                 run_date: dataToEdit.runDate,
@@ -62,7 +64,6 @@ exports.compileData = () => {
         });
       }
       newData = JSON.stringify(data);
-      console.log('compiled');
       resolve(data);
     });
   });
