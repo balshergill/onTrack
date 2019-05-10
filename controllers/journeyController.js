@@ -2,22 +2,32 @@ const {
   fetchLiveJourney,
   fetchLiveFastest,
   fetchLiveNext
-} = require('../models/liveModels');
+} = require("../models/liveModels");
 
-exports.getJourney = (req, res, next) => {
-  fetchLiveJourney(req.params, req.query, (err, data) => {
-    if (err) throw err;
-    let index = data.trainServices[0].subsequentCallingPoints.findIndex(
+const { displayMinsLate } = require("../models/historicalModels");
+
+exports.getJourney = function(req, res, next) {
+  fetchLiveJourney(req.params, req.query).then(liveData => {
+    let index = liveData.trainServices[0].subsequentCallingPoints.findIndex(
       stop => {
         return stop.crs === req.query.to;
       }
     );
-    console.log(data.trainServices[0].origin.name);
-    console.log(
-      data.trainServices[0].subsequentCallingPoints[index].locationName
-    );
-    console.log(data.trainServices[0].subsequentCallingPoints[index].st);
-    res.status(200).json(data);
+    // const stationFrom = liveData.trainServices[0].origin.name;
+    // const stationTo =
+    //   liveData.trainServices[0].subsequentCallingPoints[index].locationName;
+    // const depTime = liveData.trainServices[0].subsequentCallingPoints[index].st;
+
+    const stationFrom = "New Pudsey";
+    const stationTo = "Bramley (West Yorkshire)";
+    const depTime = "08:09:00";
+    displayMinsLate(stationFrom, stationTo, depTime).then(historicData => {
+      console.log(historicData[0].arr_minutes_late, "historicData");
+      res.status(200).json({
+        liveData: liveData,
+        historicData: historicData[0].arr_minutes_late
+      });
+    });
   });
 };
 
