@@ -23,7 +23,7 @@ class ServiceCard extends Component {
         <Icon
           name={this.props.reliability === 'yes' ? 'check-circle' : this.props.reliability === 'no' ? 'times-circle' : 'minus-circle'}
           type='font-awesome'
-          color={this.props.reliability === 'yes' ? 'rgb(0, 200, 0)' : this.props.reliability === 'no' ? 'red' : 'orange'}
+          color={this.props.reliability === 'yes' ? 'rgb(1, 215, 50)' : this.props.reliability === 'no' ? 'rgb(255, 56, 29)' : 'rgb(255, 160, 0)'}
           size= '50'
         />
         </View>
