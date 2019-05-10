@@ -15,7 +15,6 @@ exports.compileData = () => {
           const dataToEdit = JSON.parse(contents);
           let wantedData;
           for (let i = 0; i < dataToEdit.locations.length; i++) {
-            console.log(dataToEdit.locations.length);
             if (i < dataToEdit.locations.length - 1) {
               wantedData = {
                 service_id: dataToEdit.serviceUid,

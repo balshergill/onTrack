@@ -23,11 +23,6 @@ exports.getJourney = function(req, res, next) {
     // const stationTo = "Manchester Oxford Road";
     // const depTime = "09:10:00";
     displayMinsLate(stationFrom, stationTo, depTime).then(historicData => {
-      console.log(historicData[0].dep_minutes_late, "historicData");
-      console.log({
-        liveData: liveData,
-        historicData: historicData[0].dep_minutes_late
-      });
       res.status(200).json({
         liveData: liveData,
         historicData: historicData[0].dep_minutes_late

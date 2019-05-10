@@ -1,3 +1,3 @@
-const data = require('./raw-data');
+const data = require("./raw-data");
 
 module.exports = data;
