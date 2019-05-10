@@ -14,19 +14,18 @@ exports.getJourney = function(req, res, next) {
         return stop.crs === req.query.to;
       }
     );
-    // const stationFrom = liveData.trainServices[0].origin.name;
-    // const stationTo =
-    //   liveData.trainServices[0].subsequentCallingPoints[index].locationName;
-    // const depTime = liveData.trainServices[0].subsequentCallingPoints[index].st;
+    const stationFrom = liveData.trainServices[0].origin.name;
+    const stationTo =
+      liveData.trainServices[0].subsequentCallingPoints[index].locationName;
+    const depTime = liveData.trainServices[0].subsequentCallingPoints[index].st;
 
-    const stationFrom = "New Pudsey";
-    const stationTo = "Bramley (West Yorkshire)";
-    const depTime = "08:09:00";
+    // const stationFrom = "Manchester Victoria";
+    // const stationTo = "Manchester Oxford Road";
+    // const depTime = "09:10:00";
     displayMinsLate(stationFrom, stationTo, depTime).then(historicData => {
-      console.log(historicData[0].dep_minutes_late, "historicData");
       res.status(200).json({
         liveData: liveData,
-        historicData: historicData[0].arr_minutes_late
+        historicData: historicData[0].dep_minutes_late
       });
     });
   });
