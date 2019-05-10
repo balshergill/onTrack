@@ -6,7 +6,7 @@ import { View, StyleSheet } from 'react-native';
 
 export default class Body extends Component {
   state = {
-    currentScreen : 'User',
+    currentScreen : 'Search',
   }
   render() {
     return (
