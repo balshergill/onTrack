@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
   Main: {
     flex: 6,
     flexDirection: 'column',
-    justifyContent: 'center',
     textAlign: 'center',
     alignSelf: 'stretch',
     alignItems: 'center',
