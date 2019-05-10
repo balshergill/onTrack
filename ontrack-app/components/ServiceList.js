@@ -67,10 +67,6 @@ export default class ServiceList extends Component {
 }
 
 const styles = StyleSheet.create({
-  // root:{
-  //   marginTop:1,
-  //   padding:10,
-  // },
   titleContainer:{
     shadowColor: '#00000021',
     shadowOffset: {
@@ -79,12 +75,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 4,
     marginVertical: 8,
-    backgroundColor:"#DCDCDC",
-    padding:10
+    backgroundColor: "#DCDCDC",
+    padding: 10
   },
   title:{
-    fontSize:15,
-    color:"#000000"
+    fontSize: 15,
+    color: "#000000"
   },
   container: {
     paddingVertical: 3,
@@ -107,17 +103,17 @@ const styles = StyleSheet.create({
     backgroundColor: "#CCCCCC"
   },
   image:{
-    width:45,
-    height:45,
-    borderRadius:20,
-    marginLeft:20
+    width: 45,
+    height: 45,
+    borderRadius: 20,
+    marginLeft: 20
   },
   time:{
-    fontSize:11,
-    color:"#808080",
+    fontSize: 11,
+    color: "#808080",
   },
   name:{
-    fontSize:16,
-    fontWeight:"bold",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });

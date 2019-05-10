@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    width: '100%',
+    alignSelf: 'stretch',
     alignItems: 'center',
     backgroundColor: '#FFF',
     borderBottomWidth: 3,
@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
     marginBottom: 0,
   },
   Logo: {
-    marginTop: '10%',
-    fontSize: '35em',
+    marginTop: 30,
+    fontSize: 35,
     textAlign: 'left',
     color: '#9A9A9A',
   }

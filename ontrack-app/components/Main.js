@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     textAlign: 'center',
-    width: '100%',
+    alignSelf: 'stretch',
     alignItems: 'center',
   },
 });

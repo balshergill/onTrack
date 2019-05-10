@@ -12,8 +12,8 @@ const PaymentButton = () => {
 const styles = StyleSheet.create({
     PaymentButton: {
       justifyContent: 'center',
-      width: '75%',
-      height: '5%',
+      width: 300,
+      height: 20,
       alignItems: 'center',
       backgroundColor: '#FFF',
       borderRadius: '3',

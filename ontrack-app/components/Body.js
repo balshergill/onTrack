@@ -6,7 +6,7 @@ import { View, StyleSheet } from 'react-native';
 
 export default class Body extends Component {
   state = {
-    currentScreen : 'Search',
+    currentScreen : 'User',
   }
   render() {
     return (
@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
     flex: 8.5,
     flexDirection: 'column',
     justifyContent: 'center',
-    width: '100%',
     alignItems: 'center',
+    alignSelf: 'stretch',
   },
   Menu: {
     flex: 0.75,
@@ -66,13 +66,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     borderTopWidth: 3,
     borderTopColor: '#0996F6',
-    width: '100%',
+    alignSelf: 'stretch',
     justifyContent: 'center',
   },
   icon: {
     flexDirection: 'row',
     flex: 1,
-    marginLeft: '10%',
-    marginTop: '3%',
+    marginLeft: 40,
+    marginTop: 10,
   },
 });

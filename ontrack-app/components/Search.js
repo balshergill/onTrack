@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
       backgroundColor: 'rgba(0, 0, 255, 0.3)',
       justifyContent: 'center',
       textAlign: 'center',
-      width: '100%',
+      alignSelf: 'stretch',
       alignItems: 'center',
     },
   });
