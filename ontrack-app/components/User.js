@@ -41,11 +41,6 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     Button: {
-      position: 'absolute',
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0,
       alignSelf: 'stretch',
     },
     ButtonArea: {
@@ -60,7 +55,6 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#EFEFEF',
       justifyContent: 'center',
-      height: '100%',
       width: 300,
       marginTop: 40,
       borderBottomColor: '#0996F6',
@@ -71,7 +65,6 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#EFEFEF',
       justifyContent: 'center',
-      height: '100%',
       width: 300,
       marginTop: 20,
       borderBottomColor: '#0996F6',
