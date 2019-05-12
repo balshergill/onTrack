@@ -12,11 +12,11 @@ class User extends React.Component {
       <View style={styles.User}>
         <View style={styles.Usernameinput}>
           <TextInput style={styles.inputField} onChangeText={(text) => this.setState({UsernameText: text})}
-          value={this.state.UsernameText}
+          placeholder={this.state.UsernameText}
         />
         </View>
         <View style={styles.Passwordinput}>
-          <TextInput style={styles.inputField} onChangeText={(text) => this.setState({PasswordText: text})} secureTextEntry={true} value={this.state.PasswordText} />
+          <TextInput style={styles.inputField} onChangeText={(text) => this.setState({PasswordText: text})} secureTextEntry={true} placeholder={this.state.PasswordText} />
         </View>
         <View style={styles.ButtonArea}>
           <TouchableOpacity style={styles.Button}>
