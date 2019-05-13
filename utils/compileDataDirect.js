@@ -1,7 +1,8 @@
 const knex = require('../db/connection');
 const axios = require('axios');
 const moment = require('moment');
-const { basicAuth } = require('../keys');
+const { RTTuser, RTTpassword } =
+  process.env === 'production' ? process.env : require('../keys');
 
 const yesterday = moment().subtract(1, 'day');
 const day = yesterday.format('DD');
@@ -26,7 +27,7 @@ exports.compileDataDirect = () => {
           .get(
             `https://api.rtt.io/api/v1/json/service/${service}/${year}/${month}/${day}`,
             {
-              auth: basicAuth
+              auth: { username: RTTuser, password: RTTpassword }
             }
           )
           .then(apiData => {
