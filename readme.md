@@ -1,12 +1,12 @@
 ## backend dependencies
 
-    - `axios` - 0.18.0
-    - `cors` - 2.8.5
-    - `express` - 4.16.4
-    - `knex` - 0.16.5
-    (- `moment` - 2.24.0)
-    - `national-rail-darwin` - 1.0.8
-    - `pg - 7.10.0`
++ `axios` - 0.18.0
++ `cors` - 2.8.5
++ `express` - 4.16.4
++ `knex` - 0.16.5
++ `moment` - 2.24.0
++ `national-rail-darwin` - 1.0.8
++ `pg - 7.10.0`
     
 ##### testing done with `chai` 4.2.0 and `supertest` 4.0.2
 
