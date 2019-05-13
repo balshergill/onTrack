@@ -3,8 +3,12 @@ const { expect } = require('chai');
 const supertest = require('supertest');
 const App = require('../App');
 const request = supertest(App);
+const db = require('../db/connection');
 
 describe('/journey', () => {
+  after(() => {
+    db.destroy();
+  });
   it('GET status 200 and array of objects', () => {
     return request
       .get('/journey?from=MCV&to=HFX')

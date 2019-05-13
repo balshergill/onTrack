@@ -9,5 +9,7 @@ const dbConfig =
       }
     : require('../knexfile');
 
-module.exports = require('knex')(dbConfig);
+const connection = require('knex')(dbConfig);
+module.exports = connection;
+
 // module.exports = knex;
