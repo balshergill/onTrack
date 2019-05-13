@@ -10,7 +10,10 @@
     "seed-service": "NODE_ENV=test knex seed:run",
     "seed-prod": "NODE_ENV=production DATABASE_URL=$(heroku config:get DATABASE_URL) knex seed:run",
     "create-db-prod": "NODE_ENV=production DATABASE_URL=$(heroku config:get DATABASE_URL) psql -f ./db/setup.sql",
-    "start": "node listen.js"
+    "start": "node listen.js",
+    "migrate:make": "knex migrate:make",
+    "migrate:latest": "knex migrate:latest",
+    "migrate:rollback": "knex migrate:rollback"
   },
   "repository": {
     "type": "git",
