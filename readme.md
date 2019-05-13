@@ -1,13 +1,13 @@
 ## backend dependencies
 
-+ `axios` - 0.18.0
-+ `cors` - 2.8.5
-+ `express` - 4.16.4
-+ `knex` - 0.16.5
-+ `moment` - 2.24.0
-+ `national-rail-darwin` - 1.0.8
-+ `pg - 7.10.0`
-    
+- `axios` - 0.18.0
+- `cors` - 2.8.5
+- `express` - 4.16.4
+- `knex` - 0.16.5
+- `moment` - 2.24.0
+- `national-rail-darwin` - 1.0.8
+- `pg - 7.10.0`
+
 testing done with `chai` 4.2.0 and `supertest` 4.0.2
 
 ## Keys
@@ -15,12 +15,12 @@ testing done with `chai` 4.2.0 and `supertest` 4.0.2
 A `keys.js` file is needed to make queries to the National Rail Live Departure Board Web Service. It should look like this:
 
 ```javascript
-const TOKEN = /*token here*/;
 
-const Rail = require('national-rail-darwin');
-const rail = new Rail(TOKEN);
+const TOKEN = /*national-rail-darwin token here*/;
+const RTTuser = /*username for realtimetrains.co.uk*/;
+const RTTpassword = /*password for realtimetrains.co.uk*/;
 
-module.exports = { rail };
+module.exports = { TOKEN, RTTuser, RTTpassword };
 ```
 
 You can register for an account to access the LDB web service [here](https://www.nationalrail.co.uk/100296.aspx), along with the four other data feeds.
@@ -69,13 +69,13 @@ module.exports = {
 };
 
 ```
+
 The `username` and `password` strings will be the username and password you provided when setting up PostgreSQL.
 
 ## scripts:
 
-```javascript
-setup-db: psql -f ./db/setup.sql && NODE_ENV=test knex seed:run // do not run with argument
-create-db: psql -f ./db/setup.sql
-seed-service: NODE_ENV=test knex seed:run // takes argument of serviceid (eg: npm run seed-service -- Y52118 )
-```
-
+run:
+'npm run setup-db' to reset the DB and seed with data in db/data/raw-data files.
+'npm run create-db' to drop and recreate the empty database
+'npm run seed-service -- [serviceID here]' (eg serviceID Y52118 ) to seed the database with the data from the previous day.
+'npm run seed:prod' to seed the production database with or without service ID as argument.
