@@ -8,7 +8,7 @@
 + `national-rail-darwin` - 1.0.8
 + `pg - 7.10.0`
     
-##### testing done with `chai` 4.2.0 and `supertest` 4.0.2
+testing done with `chai` 4.2.0 and `supertest` 4.0.2
 
 ## Keys
 
@@ -27,7 +27,7 @@ You can register for an account to access the LDB web service [here](https://www
 
 ## Database
 
-A `knexfile.js` is needed to use the database once you have set it up (see the scripts below). It should look like this:
+A `knexfile.js` is needed to query the database once you have set it up (see the scripts below). It should look like this:
 
 ```javascript
 const ENV = process.env.NODE_ENV || 'development';
@@ -71,8 +71,11 @@ module.exports = {
 ```
 The `username` and `password` strings will be the username and password you provided when setting up PostgreSQL.
 
-### scripts:
+## scripts:
 
-    - "setup-db": "psql -f ./db/setup.sql && NODE_ENV=test knex seed:run" // do not run with argument
-    - "create-db": "psql -f ./db/setup.sql"
-    - "seed-service": "NODE_ENV=test knex seed:run" // takes argument of serviceid (eg: npm run seed-service -- Y52118 )
+```javascript
+setup-db: psql -f ./db/setup.sql && NODE_ENV=test knex seed:run // do not run with argument
+create-db: psql -f ./db/setup.sql
+seed-service: NODE_ENV=test knex seed:run // takes argument of serviceid (eg: npm run seed-service -- Y52118 )
+```
+
