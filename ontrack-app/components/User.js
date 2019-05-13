@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, TextInput, Button, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native';
 
 
 class User extends React.Component {
@@ -23,7 +23,10 @@ class User extends React.Component {
             <Text style={styles.login}>Login</Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.spacer}/>
+        <View style={styles.spacer}>
+        </View>
+          <Image source={require('../images/NRE_Powered_logo.png')} style={styles.image}
+          />
       </View>
     )
   }
@@ -98,6 +101,10 @@ const styles = StyleSheet.create({
       paddingTop: 10,
       fontWeight: 'bold',
       color: 'white',
+    },
+    image: {
+      flex: 1,
+      resizeMode: 'contain',
     }
   });
 
