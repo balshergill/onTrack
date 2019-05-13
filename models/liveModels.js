@@ -1,5 +1,8 @@
-const { rail } = require('../keys');
+const { TOKEN } =
+  process.env === 'production' ? process.env : require('../keys');
 const stations = require('../station_codes.json');
+const Rail = require('national-rail-darwin');
+const rail = new Rail(TOKEN);
 
 const stationInfo = (startCrs, endCrs) => {
   let result = {

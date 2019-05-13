@@ -8,8 +8,8 @@
     "setup-db": "psql -f ./db/setup.sql && NODE_ENV=test knex seed:run",
     "create-db": "psql -f ./db/setup.sql",
     "seed-service": "NODE_ENV=test knex seed:run",
-    "seed-prod": "NODE_ENV=test DATABASE_URL=$(heroku config:get DATABASE_URL) knex seed:run",
-    "create-db-prod": "NODE_ENV=test DATABASE_URL=$(heroku config:get DATABASE_URL) psql -f ./db/setup.sql",
+    "seed-prod": "NODE_ENV=production DATABASE_URL=$(heroku config:get DATABASE_URL) knex seed:run",
+    "create-db-prod": "NODE_ENV=production DATABASE_URL=$(heroku config:get DATABASE_URL) psql -f ./db/setup.sql",
     "start": "node listen.js"
   },
   "repository": {
