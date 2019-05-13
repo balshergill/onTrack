@@ -1,5 +1,5 @@
-const { rail } = require("../keys");
-const stations = require("../station_codes.json");
+const { rail } = require('../keys');
+const stations = require('../station_codes.json');
 
 const stationInfo = (startCrs, endCrs) => {
   let result = {
@@ -8,7 +8,7 @@ const stationInfo = (startCrs, endCrs) => {
   };
   let i = 0;
   while (!result.start || !result.end) {
-    let stCrs = stations[i]["CRS Code"];
+    let stCrs = stations[i]['CRS Code'];
     if (stCrs === startCrs) {
       result.start = stations[i];
     }
@@ -35,7 +35,7 @@ exports.fetchLiveJourney = (params, query) => {
 };
 
 exports.fetchLiveFastest = (params, query, callback) => {
-  console.log("in model", query.from, query.to);
+  console.log('in model', query.from, query.to);
   console.log(callback);
   rail.getDepartureBoard(query.from, query.to, {}, (err, result) => {
     if (err) throw err;
