@@ -1,5 +1,4 @@
-const { TOKEN } =
-  process.env === 'production' ? process.env : require('../keys');
+const { TOKEN } = process.env;
 const stations = require('../station_codes.json');
 const Rail = require('national-rail-darwin');
 const rail = new Rail(TOKEN);

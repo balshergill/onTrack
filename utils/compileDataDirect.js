@@ -1,8 +1,7 @@
 const knex = require('../db/connection');
 const axios = require('axios');
 const moment = require('moment');
-const { RTTuser, RTTpassword } =
-  process.env === 'production' ? process.env : require('../keys');
+const { RTTuser, RTTpassword } = process.env;
 
 const yesterday = moment().subtract(1, 'day');
 const day = yesterday.format('DD');
