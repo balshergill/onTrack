@@ -24,7 +24,7 @@ class ServiceCard extends Component {
           name={this.props.reliability === 'yes' ? 'check-circle' : this.props.reliability === 'no' ? 'times-circle' : 'minus-circle'}
           type='font-awesome'
           color={this.props.reliability === 'yes' ? 'rgb(1, 215, 50)' : this.props.reliability === 'no' ? 'rgb(255, 56, 29)' : 'rgb(255, 160, 0)'}
-          size= '50'
+          size= {50}
         />
         </View>
         {this.state.openCard === true ? 
@@ -35,7 +35,7 @@ class ServiceCard extends Component {
                 name='chevron-left'
                 type='font-awesome'
                 color='#9A9A9A'
-                size= '40'
+                size= {40}
               />
             </View>
           </View> 
