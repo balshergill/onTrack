@@ -1,8 +1,14 @@
 import React from 'react';
 import { Text, View, StyleSheet, TextInput, TouchableOpacity, Picker } from 'react-native';
-
+import DatePicker from 'react-native-datepicker';
+import { Dropdown } from 'react-native-material-dropdown'
 
 const Search = () => {
+  let data = [{
+    value: 'Arriving at',
+  }, {
+    value: 'Departing at',
+  }]
   return (
     <View style={styles.Search}>
       <View style={styles.stationInput}>
@@ -15,14 +21,30 @@ const Search = () => {
       </View>
       <View>
         <View>
-          <View>
-            <TextInput placeholder='Date Input' style={styles.DateTime}/>
+          <View style={styles.DateTime}>
+            <DatePicker
+              mode='date'
+              style={styles.Pickers}
+              placeholder='Date Input'
+              showIcon={ false }
+              confirmBtnText="Confirm"
+              cancelBtnText="Cancel"
+            />
+          </View>
+          <View style={styles.DateTime}>
+            <DatePicker 
+              mode='time'
+              style={styles.Pickers}
+              placeholder='Time Input' 
+              showIcon={ false }
+              confirmBtnText="Confirm"
+              cancelBtnText="Cancel"/>
           </View>
           <View>
-            <TextInput placeholder='Time Input'/>
-          </View>
-          <View>
-            <TextInput placeholder='Arriving/Departing Time' />
+            <Dropdown 
+              placeholder='Arriving/Departing Time' 
+              data={ data }  
+            />
           </View>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Find Times</Text>
@@ -82,10 +104,15 @@ const styles = StyleSheet.create({
       color: 'white',
     },
     DateTime: {
-      alignSelf: 'stretch',
+      width: 300,
       height: 10,
+      padding: 10,
+      marginTop: 20,
+      marginBottom: 20,
+      alignItems: 'center',
     },
     Pickers: {
+      width: 300,
     }
   });
 
