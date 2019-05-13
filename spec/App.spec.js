@@ -9,12 +9,16 @@ describe('/journey', () => {
   after(() => {
     db.destroy();
   });
-  it('GET status 200 and array of objects', () => {
+  it('GET status 200 and object of objects', () => {
     return request
-      .get('/journey?from=MCV&to=HFX')
+      .get('/journey?from=KGX&to=YRK')
       .expect(200)
       .then(({ body }) => {
-        console.log(body, '<<< body');
+        expect(body).to.be.an('Object');
+        expect(body).to.contain.keys('liveResult', 'result');
+        expect(body.result).to.be.an('Array');
+        expect(body.liveResult).to.be.an('Object');
+        console.log(body.liveResult, '<<< body');
       });
   });
 });
