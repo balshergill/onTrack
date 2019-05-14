@@ -11,14 +11,15 @@ describe('/journey', () => {
   });
   it('GET status 200 and object of objects', () => {
     return request
-      .get('/journey?from=RCD&to=HBD')
+      .get('/journey?from=YRK&to=MIA')
       .expect(200)
       .then(({ body }) => {
         expect(body).to.be.an('Object');
         expect(body).to.contain.keys('liveResult', 'result');
         expect(body.result).to.be.an('Array');
         expect(body.liveResult).to.be.an('Object');
-        console.log(body.result[0].rows, '<<< body');
+        expect(body.result[0].rows[0]['dep minutes late']).to.not.equal(null);
+        // console.log(body.result[2], '<<< body');
       });
   });
 });
