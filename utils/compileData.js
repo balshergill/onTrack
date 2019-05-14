@@ -10,10 +10,12 @@ exports.compileData = () => {
       const data = [];
       if (err) return console.log(err);
       else {
+        console.log(files, 'in compile data');
         files.forEach(function(file) {
           let contents = fs.readFileSync(`${directoryPath}/${file}`, 'utf8');
           const dataToEdit = JSON.parse(contents);
           let wantedData;
+          console.log(dataToEdit.locations.length, 'in compileData');
           for (let i = 0; i < dataToEdit.locations.length; i++) {
             if (i < dataToEdit.locations.length - 1) {
               wantedData = {
