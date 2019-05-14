@@ -1,6 +1,6 @@
 const stations = require('./station_codes.json');
 
-const exactSearch = input => {
+exports.exactSearch = input => {
   let result = (i = 0);
 
   while (!result) {
