@@ -23,7 +23,7 @@ const RTTpassword = /*password for realtimetrains.co.uk*/;
 module.exports = { TOKEN, RTTuser, RTTpassword };
 ```
 
-You can register for an account to access the LDB web service [here](https://www.nationalrail.co.uk/100296.aspx), along with the four other data feeds.
+You can register for an account to access the LDB web service [here](https://www.nationalrail.co.uk/100296.aspx), along with the four other data feeds. You can register for realTimeTrains [here](http://www.realtimetrains.co.uk/about/developer).
 
 ## Database
 
