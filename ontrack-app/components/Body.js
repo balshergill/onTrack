@@ -11,7 +11,7 @@ export default class Body extends Component {
   render() {
     return (
       <View style={styles.Body}>
-        <Main currentScreen={this.state.currentScreen}/>
+        <Main currentScreen={this.state.currentScreen} setCurrentScreen={this.setCurrentScreen}/>
         <View style={styles.Menu}>
           <View style={styles.icon}>
             <Icon
@@ -47,6 +47,11 @@ export default class Body extends Component {
   handleClick = location => {
     this.setState({
       currentScreen: location
+    })
+  }
+  setCurrentScreen = () => {
+    this.setState({
+      currentScreen: 'List'
     })
   }
 }
