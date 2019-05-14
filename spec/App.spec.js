@@ -11,14 +11,14 @@ describe('/journey', () => {
   });
   it('GET status 200 and object of objects', () => {
     return request
-      .get('/journey?from=KGX&to=YRK')
+      .get('/journey?from=RCD&to=HBD')
       .expect(200)
       .then(({ body }) => {
         expect(body).to.be.an('Object');
         expect(body).to.contain.keys('liveResult', 'result');
         expect(body.result).to.be.an('Array');
         expect(body.liveResult).to.be.an('Object');
-        console.log(body.liveResult, '<<< body');
+        console.log(body.result[0].rows, '<<< body');
       });
   });
 });
