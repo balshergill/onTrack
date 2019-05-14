@@ -1,58 +1,64 @@
 import React from 'react';
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, Picker } from 'react-native';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, Picker, ScrollView } from 'react-native';
 import DatePicker from 'react-native-datepicker';
-import { Dropdown } from 'react-native-material-dropdown'
+import { Dropdown } from 'react-native-material-dropdown';
 
-const Search = () => {
-  let data = [{
+const Search = (props) => {
+  data = [{
     value: 'Arriving at',
   }, {
     value: 'Departing at',
   }]
-  return (
-    <View style={styles.Search}>
-      <View style={styles.stationInput}>
-        <View>
-          <TextInput style={styles.stations} placeholder='Origin'/>
-        </View>
-        <View>
-          <TextInput style={styles.stations} placeholder='Destination'/>
-        </View>
-      </View>
-      <View>
-        <View>
-          <View style={styles.DateTime}>
-            <DatePicker
-              mode='date'
-              style={styles.Pickers}
-              placeholder='Date Input'
-              showIcon={ false }
-              confirmBtnText="Confirm"
-              cancelBtnText="Cancel"
-            />
-          </View>
-          <View style={styles.DateTime}>
-            <DatePicker 
-              mode='time'
-              style={styles.Pickers}
-              placeholder='Time Input' 
-              showIcon={ false }
-              confirmBtnText="Confirm"
-              cancelBtnText="Cancel"/>
+    return (
+      <ScrollView>
+        <View style={styles.Search}>
+        <View style={styles.stationInput}>
+          <View>
+            <TextInput style={styles.stations} placeholder='Origin' onChangeText={(text) => props.handleChange(text, 'originStation')}/>
           </View>
           <View>
-            <Dropdown 
-              placeholder='Arriving/Departing Time' 
-              data={ data }  
-            />
+            <TextInput style={styles.stations} placeholder='Destination' onChangeText={(text) => props.handleChange(text, 'destination')}/>
           </View>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Find Times</Text>
-          </TouchableOpacity>
         </View>
-      </View>
-    </View>
-  )
+        <View>
+          <View>
+            <View style={styles.DateTime}>
+              <DatePicker
+                mode='date'
+                style={styles.Pickers}
+                placeholder='Date Input'
+                showIcon={ false }
+                confirmBtnText="Confirm"
+                cancelBtnText="Cancel"
+              />
+            </View>
+            <View style={styles.DateTime}>
+              <DatePicker 
+                mode='time'
+                style={styles.Pickers}
+                placeholder='Time Input' 
+                showIcon={ false }
+                confirmBtnText="Confirm"
+                cancelBtnText="Cancel"/>
+            </View>
+            <View>
+              <Dropdown 
+                placeholder='Arriving/Departing Time' 
+                data={ this.data }  
+              />
+            </View>
+            <TouchableOpacity style={styles.button} onPress={() => {
+              props.findTrains(props.origin, props.destination)
+              if (props.origin && props.destination) props.setCurrentScreen()
+            }
+            }>
+              <Text style={styles.buttonText} originStation={props.origin} destination={props.destination} >Find Times</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        </View>
+      </ScrollView>
+    )
 }
 
 const styles = StyleSheet.create({
@@ -63,6 +69,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       alignSelf: 'stretch',
       alignItems: 'center',
+      width: 400,
     },
     stations: {
       backgroundColor: '#EFEFEF',
