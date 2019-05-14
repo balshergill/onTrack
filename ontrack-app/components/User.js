@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
       paddingTop: 5,
       fontWeight: 'bold',
       color: 'white',
+      height: 60,
     },
     image: {
       flex: 1,
