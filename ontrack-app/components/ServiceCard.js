@@ -8,13 +8,14 @@ class ServiceCard extends Component {
     openCard: false,
   }
   render () {
+    const { trainData, destination, destCRS } = this.props
     return (
       <TouchableOpacity style={styles.ServiceCard} onPress={() => this.handleClick()}>
         <View style={styles.origin}>
           <Text>Origin Station (CRS)</Text>
         </View>
         <View style={this.state.openCard === false ? styles.destination : styles.clickedDestination}>
-          <Text>Destination (CRS)</Text>
+          <Text>{`${destination} (${destCRS})`}</Text>
         </View>
         <View style={styles.time}>
           <Text>Time of Service</Text>
