@@ -35,7 +35,11 @@ findTrains = (origin, destination) => {
       })
     } else {
       const getData = (origin, destination) =>  {
-        let url = `https://ontrack-northcoders.herokuapp.com/journey?from=${origin}&to=${destination}`;
+        originCRS = exactSearch(origin)['CRS Code']
+        destinationCRS = exactSearch(destination)['CRS Code']
+        console.log(destinationCRS)
+        console.log(originCRS)
+        let url = `https://ontrack-northcoders.herokuapp.com/journey?from=${originCRS}&to=${destinationCRS}`;
         fetch(url).then((res) => {
           this.setState({ trainData : res["_bodyText"]})
           if (this.state.originStation && this.state.destination) this.props.setCurrentScreen()
