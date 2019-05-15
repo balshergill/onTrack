@@ -14,7 +14,7 @@ export default class App extends Component {
       this.setState({
         spinner: !this.state.spinner
       });
-    }, 1000);
+    }, 1100);
   }
   
   render() {
