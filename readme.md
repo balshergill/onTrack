@@ -75,7 +75,7 @@ The `username` and `password` strings will be the username and password you prov
 ## scripts:
 
 run:
-'npm run setup-db' to reset the DB and seed with data in db/data/raw-data files.
-'npm run create-db' to drop and recreate the empty database
-'npm run seed-service -- [serviceID here]' (eg serviceID Y52118 ) to seed the database with the data from the previous day.
-'npm run seed:prod' to seed the production database with or without service ID as argument.
+- ```npm run setup-db``` to reset the DB and seed with data in db/data/raw-data files.
+- ```npm run create-db``` to drop and recreate the empty database
+- ```javascript npm run seed-service --/*serviceID here*/``` (e.g. `Y52118` ) to seed the database with the data from the previous day.
+- ```npm run seed:prod``` to seed the production database with or without service ID as argument.
