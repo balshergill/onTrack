@@ -16,7 +16,7 @@ class Main extends React.Component {
     const { originStation, destination, trainData } = this.state
     return (
       <View style={styles.Main}>
-        {this.props.currentScreen === 'List' ? <ServiceList trainData={trainData}/> : this.props.currentScreen === 'User' ? <User /> : <Search handleChange={this.handleChange} findTrains={this.findTrains} origin={originStation} destination={destination} setCurrentScreen={this.props.setCurrentScreen}/>}
+        {this.props.currentScreen === 'List' ? <ServiceList trainData={trainData} origin={originStation} destination={destination} findTrains={this.findTrains}/> : this.props.currentScreen === 'User' ? <User /> : <Search handleChange={this.handleChange} findTrains={this.findTrains} origin={originStation} destination={destination} setCurrentScreen={this.props.setCurrentScreen}/>}
     </View>
   )
 }
@@ -25,7 +25,6 @@ handleChange = (text, location) => {
   this.setState({
     [location]:text
   })
-  // console.log(this.state)
 }
 findTrains = (origin, destination) => {
   if (exactSearch(origin)['CRS Code'] === 'error' || exactSearch(destination)['CRS Code'] === 'error' ) {
@@ -38,16 +37,12 @@ findTrains = (origin, destination) => {
       const getData = (origin, destination) =>  {
         let url = `https://ontrack-northcoders.herokuapp.com/journey?from=${origin}&to=${destination}`;
         fetch(url).then((res) => {
-          this.addTrainData(res["_bodyText"])
+          this.setState({ trainData : res["_bodyText"]})
+          if (this.state.originStation && this.state.destination) this.props.setCurrentScreen()
         })
       }
-      getData('LDS', 'MCV')      
+      getData(this.state.originStation, this.state.destination)
     }
-  }
-  addTrainData = (data) => {
-    this.setState({
-      trainData: data
-    })
   }
 }
 
