@@ -8,17 +8,18 @@ class ServiceCard extends Component {
     openCard: false,
   }
   render () {
-    const { trainData, destination, destCRS } = this.props
+    const { service, origin, destination, destCRS } = this.props
     return (
       <TouchableOpacity style={styles.ServiceCard} onPress={() => this.handleClick()}>
         <View style={styles.origin}>
-          <Text>Origin Station (CRS)</Text>
+          <Text>{`${origin["Station Name"]} (${origin["CRS Code"]})`}</Text>
         </View>
         <View style={this.state.openCard === false ? styles.destination : styles.clickedDestination}>
-          <Text>{`${destination} (${destCRS})`}</Text>
+          <Text>{`${destination["locationName"]} (${destination["crs"]})`}</Text>
         </View>
         <View style={styles.time}>
-          <Text>Time of Service</Text>
+          <Text>{`${service["std"]} - ${destination["st"]}`}</Text>
+          <Text>{`${service["etd"]} - ${destination["ed"] === undefined ? 'On Time' : destination["ed"]}`}</Text>
         </View>
         <View style={this.state.openCard === false ? styles.icon : styles.clickedIcon}>
         <Icon
@@ -30,7 +31,7 @@ class ServiceCard extends Component {
         </View>
         {this.state.openCard === true ? 
           <View>
-            <PaymentButton style={styles.Payment}/>
+            <PaymentButton style={styles.Payment} originCRS={origin["CRS Code"]} destinationCRS={destination["crs"]} depTime={service["std"]}/>
             <View style={styles.chevron}>
               <Icon
                 name='chevron-left'
@@ -54,7 +55,6 @@ class ServiceCard extends Component {
         openCard: false
       })
     }
-    console.log(this.state.openCard)
   }
 }
 
