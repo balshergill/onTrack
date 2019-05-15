@@ -1,9 +1,32 @@
 import React from 'react'
 import { Text, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 
-const PaymentButton = () => {
+
+const PaymentButton = props => {
+
+const roundDepTime = (oldTime) => {
+  let hrs = parseInt(oldTime[0], 10);
+  let mins = parseInt(oldTime[1], 10);
+  if(mins <= 15) {
+    hrs--;
+    mins = '59';
+  } else if (mins <= 30) {
+    mins = 15
+  } else if (mins <= 45) {
+    mins = 30
+  } else {
+    mins = 45;
+  }
+
+  let newTime = [hrs.toString(), mins.toString()]
+  console.log(newTime.join(''), '<<< new time')
+  return newTime.join('');
+}
+  console.log(props.depTime, '<<< props.depTime')
+  const newDepTime = roundDepTime(props.depTime.split(':'));
+  const newNumDepTime = 0
   return (
-    <TouchableOpacity style={styles.PaymentButton} onPress={() => Linking.openURL('http://ojp.nationalrail.co.uk/service/timesandfares/LDS/BUY/tomorrow/1415/dep')}>
+    <TouchableOpacity style={styles.PaymentButton} onPress={() => Linking.openURL(`http://ojp.nationalrail.co.uk/service/timesandfares/${props.originCRS}/${props.destinationCRS}/today/${newDepTime}/dep`)}>
       <Text style={styles.text}>Purchase Ticket</Text>
     </TouchableOpacity>
   )
