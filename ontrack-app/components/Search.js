@@ -10,7 +10,7 @@ const Search = (props) => {
     value: 'Departing at',
   }]
     return (
-      <ScrollView>
+      <View>
         <View style={styles.Search}>
         <View style={styles.stationInput}>
           <View>
@@ -56,7 +56,7 @@ const Search = (props) => {
           </View>
         </View>
         </View>
-      </ScrollView>
+      </View>
     )
 }
 
