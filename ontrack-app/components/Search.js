@@ -49,7 +49,6 @@ const Search = (props) => {
             </View>
             <TouchableOpacity style={styles.button} onPress={() => {
               props.findTrains(props.origin, props.destination)
-              if (props.origin && props.destination) props.setCurrentScreen()
             }
             }>
               <Text style={styles.buttonText} originStation={props.origin} destination={props.destination} >Find Times</Text>
