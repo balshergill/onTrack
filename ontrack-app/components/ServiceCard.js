@@ -21,7 +21,7 @@ class ServiceCard extends Component {
           <Text style={styles.destinationText}>{`${destination["locationName"]} (${destination["crs"]})`}</Text>
         </View>
         <View style={styles.time}>
-          <Text style={styles.timeText}>{`Expected ${service["etd"]} ${destination["ed"] === undefined ? '' : '- ' + destination["ed"]}`}</Text>
+          <Text style={styles.timeText}>{service["etd"] === 'Cancelled' ? `${service["etd"]}` : `Expected ${service["etd"]} ${destination["ed"] === undefined ? '' : '- ' + destination["ed"]}`}</Text>
         </View>
         <View style={this.state.openCard === false ? styles.icon : styles.clickedIcon}>
         <Icon
