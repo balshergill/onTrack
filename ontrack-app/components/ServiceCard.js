@@ -90,7 +90,8 @@ const styles = StyleSheet.create({
   originText: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#505050'
+    color: '#505050',
+    paddingTop: 1,
   },
   destination: {
     position: 'absolute',
