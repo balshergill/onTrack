@@ -19,7 +19,7 @@ class AddFavouriteJourneys extends React.Component {
     destination: "",
     getValue: "",
     isTimePickerVisible: false,
-    timePicked: "",
+    timePicked: 'Time Input',
     stores: []
   };
 
@@ -89,7 +89,7 @@ class AddFavouriteJourneys extends React.Component {
             mode="time"
             time={this.state.timePicked}
             style={styles.Pickers}
-            placeholder="Time Input"
+            placeholder={this.state.timePicked}
             showIcon={false}
             confirmBtnText="Confirm"
             cancelBtnText="Cancel"
@@ -132,18 +132,20 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     paddingBottom: 25,
-    textAlign: "center"
+    textAlign: "center",
+    color: '#404040'
   },
   FavouriteTextStyle: {
     paddingTop: 20,
-    fontSize: 20,
-    fontWeight: "bold"
+    fontSize: 25,
+    fontWeight: "bold",
+    color: '#707070'
   },
 
   TextInputStyle: {
     backgroundColor: "#EFEFEF",
     width: 300,
-    marginTop: 10,
+    marginTop: 20,
     borderBottomColor: "#0996F6",
     borderBottomWidth: 2,
     color: "#040404",
@@ -165,12 +167,13 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOffset: { width: 4, height: 5 },
     shadowOpacity: 0.2,
-    height: 30,
-    shadowRadius: 2
+    height: 50,
+    shadowRadius: 2,
+    paddingTop: 10,
   },
   buttonSave: {
-    backgroundColor: "black",
-    marginTop: 20,
+    backgroundColor: "#707070",
+    marginTop: 40,
     width: 60,
     shadowColor: "#000",
     shadowOffset: { width: 4, height: 5 },
@@ -191,14 +194,19 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
     fontWeight: "bold",
-    color: "white"
+    color: "white",
+    height: 40,
   },
 
   text: {
     paddingTop: 20,
     fontSize: 15,
     textAlign: "left",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    login: {
+      'test1':
+      'password'
+    }
   },
   DateTime: {
     width: 300,
@@ -209,7 +217,8 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   Pickers: {
-    width: 300
+    width: 300,
+    marginTop: 20,
   }
 });
 

@@ -26,11 +26,6 @@ const Search = props => {
       <View style={styles.Search}>
         <View style={styles.stationInput}>
           <View style={styles.ViewBox}>
-          {/* <TextInput
-              style={styles.stations}
-              placeholder="Origin"
-              onChangeText={text => props.handleChange(text, "originStation")}
-            /> */}
           <StationSearch
             style={styles.stations}
             placeholder="Origin"
@@ -43,11 +38,6 @@ const Search = props => {
             placeholder="Destination"
             handleChange={text => props.handleChange(text, 'destination')}
           />
-          {/* <TextInput
-              style={styles.stations}
-              placeholder="Destination"
-              onChangeText={text => props.handleChange(text, "destination")}
-            /> */}
           </View>
         </View>
         <View>
