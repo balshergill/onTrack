@@ -16,7 +16,7 @@ export default class App extends Component {
       });
     }, 1100);
   }
-  
+
   render() {
     return (
       <View style={styles.container}>
@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
+    justifyContent: 'center'
+  }
 });
-
