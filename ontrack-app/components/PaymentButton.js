@@ -26,11 +26,13 @@ const roundDepTime = (oldTime) => {
   const newDepTime = roundDepTime(props.depTime.split(':'));
   const newNumDepTime = 0
   return (
-    <TouchableOpacity style={styles.PaymentButton} onPress={() => Linking.openURL(`http://ojp.nationalrail.co.uk/service/timesandfares/${props.originCRS}/${props.destinationCRS}/today/${newDepTime}/dep`)}>
+    <TouchableOpacity style={styles.PaymentButton} onPress={() => Linking.openURL(`http://ojp.nationalrail.co.uk/service/timesandfares/${props.originCRS}/${props.destinationCRS}/${new Date(Date.now()).toLocaleString().slice(0,10).replace(/\//g, '')}/${newDepTime}/dep`)}>
       <Text style={styles.text}>Purchase Ticket</Text>
     </TouchableOpacity>
   )
 }
+
+
 
 const styles = StyleSheet.create({
     PaymentButton: {
