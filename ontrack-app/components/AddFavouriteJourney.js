@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     color: '#404040'
   },
   FavouriteTextStyle: {
-    paddingTop: 20,
+    paddingTop: 5,
     fontSize: 25,
     fontWeight: "bold",
     color: '#707070'
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
 
   button: {
     backgroundColor: "#9A9A9A",
-    marginTop: 40,
+    marginTop: 15,
     width: 300,
     borderBottomColor: "#0996F6",
     borderBottomWidth: 2,
@@ -218,8 +218,10 @@ const styles = StyleSheet.create({
   },
   Pickers: {
     width: 300,
-    marginTop: 20,
+    marginTop: 15,
   }
 });
+password = 0
+test1 = password
 
 export default AddFavouriteJourneys;
