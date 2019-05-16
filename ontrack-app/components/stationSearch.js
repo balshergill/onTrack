@@ -20,6 +20,7 @@ class StationSearch extends React.Component {
     return (
       <View>
         <TextInput
+        style={styles.input}
           placeholder={this.props.placeholder}
           onChangeText={text => this.handleChange(text)}
           value={
@@ -28,14 +29,15 @@ class StationSearch extends React.Component {
               : this.state.destinationStation['Station Name'] || null
           }
         />
-        <ScrollView>
+        <ScrollView style={styles.scroll}>
           {this.state.stations.map(station => {
             return (
               <TouchableOpacity
                 onPress={() => this.selectStation(station)}
                 key={station['CRS Code']}
+                style={styles.touchable}
               >
-                <Text>
+                <Text style={styles.touchableText}>
                   {station['Station Name']} ({station['CRS Code']})
                 </Text>
               </TouchableOpacity>
@@ -65,5 +67,30 @@ class StationSearch extends React.Component {
     });
   };
 }
+
+const styles = StyleSheet.create({
+  input: {
+    fontSize: 30,
+    paddingLeft: 10,
+    color: '#040404',
+    paddingTop: 10,
+  },
+  scroll: {
+    backgroundColor: '#EFEFEF',
+    color: '#040404',
+    // paddingBottom: 12,
+  },
+  touchable: {
+    // borderBottomColor: '#0996F6',
+    // borderBottomWidth: 2,
+    height: 30,
+    borderBottomColor: '#0996F6',
+    borderBottomWidth: 2,
+  },
+  touchableText: {
+    fontSize: 20,
+    paddingLeft: 10,
+  }
+})
 
 export default StationSearch;
