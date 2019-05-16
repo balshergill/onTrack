@@ -25,21 +25,21 @@ const Search = props => {
     <View>
       <View style={styles.Search}>
         <View style={styles.stationInput}>
-          {/* <View> */}
+          <View style={styles.ViewBox}>
           {/* <TextInput
               style={styles.stations}
               placeholder="Origin"
               onChangeText={text => props.handleChange(text, "originStation")}
             /> */}
           <StationSearch
-            // style={styles.stations}
+            style={styles.stations}
             placeholder="Origin"
             handleChange={text => props.handleChange(text, 'originStation')}
           />
-          {/* </View> */}
-          {/* <View> */}
+          </View>
+          <View style={styles.ViewBox}>
           <StationSearch
-            // style={styles.stations}
+            style={styles.stations}
             placeholder="Destination"
             handleChange={text => props.handleChange(text, 'destination')}
           />
@@ -48,7 +48,7 @@ const Search = props => {
               placeholder="Destination"
               onChangeText={text => props.handleChange(text, "destination")}
             /> */}
-          {/* </View> */}
+          </View>
         </View>
         <View>
           <View>
@@ -100,6 +100,19 @@ const Search = props => {
 };
 
 const styles = StyleSheet.create({
+  ViewBox: {
+    backgroundColor: '#EFEFEF',
+    width: 300,
+    marginTop: 40,
+    borderBottomColor: '#0996F6',
+    borderBottomWidth: 2,
+    color: '#040404',
+    shadowColor: '#000',
+    shadowOffset: { width: 4, height: 5 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    height: 60,
+  },
   Search: {
     flex: 6,
     flexDirection: 'column',
@@ -127,7 +140,8 @@ const styles = StyleSheet.create({
   stationInput: {
     borderBottomColor: '#0996F6',
     borderBottomWidth: 2,
-    paddingBottom: 40
+    paddingBottom: 40,
+    marginTop: 10,
   },
   button: {
     backgroundColor: '#9A9A9A',
