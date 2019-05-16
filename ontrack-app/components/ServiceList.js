@@ -6,7 +6,6 @@ import { exactSearch } from '../search';
 export default (ServiceList = props => {
   const OCRS = exactSearch(props.origin)['CRS Code'];
   const DCRS = exactSearch(props.destination)['CRS Code'];
-  console.log(props);
   if (typeof JSON.parse(props.trainData) !== 'object') {
     return (
       <View>
@@ -20,6 +19,16 @@ export default (ServiceList = props => {
   const fromStation = exactSearch(OCRS);
   serviceArr = objData['liveResult']['trainServices'];
   resultArr = objData['result'];
+  let removeIndex = null;
+  serviceArr.forEach((service, index) => {
+    if (
+      props.destination['CRS Code'] !== 'POP' &&
+      service['destination']['name'] === 'Poppleton'
+    ) {
+      removeIndex = index;
+    }
+  });
+  serviceArr.splice(removeIndex, removeIndex);
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       {serviceArr.map((service, i) => {

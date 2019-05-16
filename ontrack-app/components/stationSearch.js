@@ -17,11 +17,6 @@ class StationSearch extends React.Component {
   };
 
   render() {
-    console.log(
-      this.state.originStation,
-      'sS state',
-      this.state.destinationStation
-    );
     return (
       <View>
         <TextInput
