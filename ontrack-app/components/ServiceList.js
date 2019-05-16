@@ -6,7 +6,6 @@ import { exactSearch } from '../search';
 export default ServiceList = props => {
   const OCRS = exactSearch(props.origin)['CRS Code']
   const DCRS = exactSearch(props.destination)['CRS Code']
-  console.log(props)
   if (typeof JSON.parse(props.trainData) !== 'object') {
     return(
       <View>
