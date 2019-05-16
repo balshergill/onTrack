@@ -1,0 +1,30 @@
+Requirements:
+
+	- Need database to store users
+	- Need means to register a user
+	- Need means to verify a user exists and their information is correct
+	- Need to do something for users to do
+	- Need a way to safely store user data
+
+
+Considerations:
+
+	- No code in the browser - use node for serverside verification
+		- User can modify code in the browser so it's not safe
+	- Hashing alone not enough - must be salted
+	- Number of registration attempts must be controlled - can't spam loads of passwords
+
+
+Tools:
+
+	- OAuth2?
+		- Quite complex
+	- Stanford Javascript Cryto Library
+
+
+Process:
+	- User enters username and password
+	- Username and password are sent to the server
+	- Server uses username to look up password in database
+	- Server hashes provided password
+	- If db password is equal to provided password then user is authenticated 
