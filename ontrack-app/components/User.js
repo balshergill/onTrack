@@ -13,7 +13,7 @@ class User extends React.Component {
   state = {
     UsernameText: "Username",
     PasswordText: "Password",
-    isLoggedIn: true
+    isLoggedIn: false
   };
 
   handleLogin = () => {
