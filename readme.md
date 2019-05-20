@@ -1,3 +1,18 @@
+# onTrack - A rail service reliability app
+
+Designed to help rail users make better decisions when planning their journeys.
+
+Gives a visual indication of reliability on a particular service, based on historic records. 
+
+Allows users to:
+ - search for and see future train times,
+ - see an indication of the reliability of each service
+ - purchase tickets
+
+Reliability is assessed by taking the average number of minutes that particular journey has been late over the past 20 working days - also takes into account cancellations. 
+
+Please see the presentation and demo video included in the root of the repo for more information.
+
 ## backend dependencies
 
 - `axios` - 0.18.0
